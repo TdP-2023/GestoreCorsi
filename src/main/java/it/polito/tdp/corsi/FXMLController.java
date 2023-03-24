@@ -5,7 +5,10 @@
 package it.polito.tdp.corsi;
 
 import java.net.URL;
+import java.util.*;
 import java.util.ResourceBundle;
+
+import it.polito.tdp.corsi.model.Corso;
 import it.polito.tdp.corsi.model.Model;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -46,6 +49,29 @@ public class FXMLController {
 
     @FXML
     void corsiPerPeriodo(ActionEvent event) {
+    	String input = txtPeriodo.getText();
+    	int inputNum = 0;
+    	try {
+    	inputNum = Integer.parseInt(input);
+    	} catch (NumberFormatException e ) {
+    		txtRisultato.setText("Il valore inserito non è un intero");
+    		return;
+    	}
+    	
+    	if (inputNum<1 || inputNum>2) {
+    		txtRisultato.setText("Inserisci 1 o 2");
+        	return;
+    	}
+    	
+    	List<Corso> result = new ArrayList<>();
+    	result = model.getCorsiByPeriodo(inputNum);
+    	
+    	txtRisultato.clear();
+    	txtRisultato.setText("Trovati "+ result.size()+" corsi\n");
+    	
+    	for (Corso c : result) {
+    		txtRisultato.appendText(""+c+"\n");
+    	}
     	
     }
 

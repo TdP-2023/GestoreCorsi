@@ -7,13 +7,13 @@ public class Corso {
 	private String codC;
 	private int crediti;
 	private String nomeC;
-	private int pd;
+	private int periodo;
 	
-	public Corso(String codC, int crediti, String nomeC, int pd) {
+	public Corso(String codC, int crediti, String nomeC, int periodo) {
 		this.codC = codC;
 		this.crediti = crediti;
 		this.nomeC = nomeC;
-		this.pd = pd;
+		this.periodo = periodo;
 	}
 
 	public String getCodC() {
@@ -40,12 +40,12 @@ public class Corso {
 		this.nomeC = nomeC;
 	}
 
-	public int getPd() {
-		return pd;
+	public int getperiodo() {
+		return periodo;
 	}
 
-	public void setPd(int pd) {
-		this.pd = pd;
+	public void setperiodo(int periodo) {
+		this.periodo = periodo;
 	}
 
 	@Override
@@ -67,7 +67,7 @@ public class Corso {
 
 	@Override
 	public String toString() {
-		return "Corso [codC=" + codC + ", crediti=" + crediti + ", nomeC=" + nomeC + ", pd=" + pd + "]";
+		return "Corso [codC=" + codC + ", crediti=" + crediti + ", nomeC=" + nomeC + ", periodo=" + periodo + "]";
 	}
 	
 	
